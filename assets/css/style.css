@@ -163,7 +163,7 @@ body {
     display: flex;
     gap: 1.5rem; /* Space between the buttons */
     position: absolute; /* Position relative to the `.hero` container */
-    bottom: 40px; /* Distance from the bottom of the `.hero` container */
+    bottom: 60px; /* Distance from the bottom of the `.hero` container */
     left: 20px; /* Distance from the left of the `.hero` container */
     margin: 0; /* Ensure no extra margin */
     z-index: 2; /* Ensure it appears above the background */
