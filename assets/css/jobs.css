@@ -1,0 +1,217 @@
+/* Enhanced Jobs Page Styles */
+
+/* Hero Section */
+.jobs-hero {
+    padding: 6rem 0 3rem;
+    position: relative;
+    background: url('/assets/images/vrhlknj.jpg') center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jobs-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(11, 36, 71, 0.75), rgba(25, 55, 109, 0.4));
+    z-index: 1;
+}
+
+.jobs-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.jobs-hero h1 {
+    font-size: var(--font-size-4xl);
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-weight: var(--font-bold);
+}
+
+.jobs-hero p {
+    font-size: var(--font-size-xl);
+    color: var(--highlight-color);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: var(--font-medium);
+}
+
+@media (max-width: 768px) {
+    .jobs-hero {
+        min-height: 200px;
+    }
+
+    .jobs-hero h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .jobs-hero p {
+        font-size: var(--font-size-lg);
+    }
+}
+
+/* Jobs Section */
+.jobs-section {
+    padding: 6rem 0;
+    background: var(--white);
+}
+
+/* Enhanced Airtable Container */
+.airtable-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.airtable-wrapper {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.airtable-embed {
+    width: 100%;
+    min-height: 800px;
+    border: none;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Loading State */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--light-gray);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Search Section */
+.search-section {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.search-container {
+    display: flex;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-input {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid var(--light-gray);
+    border-radius: 8px;
+    font-size: var(--font-size-base);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(87,108,188,0.1);
+    outline: none;
+}
+
+/* Animations */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .airtable-embed {
+        min-height: 700px;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .airtable-embed {
+        min-height: 600px;
+    }
+
+    .airtable-container {
+        padding: 1rem;
+    }
+}
+
+/* Custom Scrollbar */
+.airtable-wrapper {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) var(--light-gray);
+}
+
+.airtable-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.airtable-wrapper::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+.airtable-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+} 
