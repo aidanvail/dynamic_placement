@@ -161,8 +161,11 @@ body {
 
 .cta-group {
     display: flex;
-    gap: 1.5rem;
-    margin: 0 0 2rem 2rem;
+    gap: 1.5rem; /* Space between the buttons */
+    position: absolute; /* Position relative to the parent container */
+    bottom: 20px; /* Adjust the distance from the bottom of the `.hero` container */
+    left: 20px; /* Adjust the distance from the left of the `.hero` container */
+    margin: 0; /* Remove any margin affecting the position */
 }
 
 .cta-group > * {
@@ -176,10 +179,15 @@ body {
     font-weight: var(--font-semibold);
     text-align: center;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    transition: none; /* Disable all transitions */
     text-decoration: none;
     border: none;
     cursor: pointer;
+}
+
+.btn-primary,
+.btn-secondary {
+    transition: none !important; /* Remove hover transitions */
 }
 
 .btn-primary {
