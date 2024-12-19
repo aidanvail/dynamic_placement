@@ -118,13 +118,14 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 600px;
+    height: 600px; /* Adjust height as needed */
+    width: 100vw; /* Ensure it fills the viewport width */
     display: flex;
-    align-items: flex-start; /* Align other content to the top if needed */
-    justify-content: center; /* Center other content horizontally */
+    align-items: flex-start; /* Adjust alignment */
+    justify-content: flex-start; /* Adjust content horizontally */
     text-align: center;
     color: var(--white);
-    background: url('/assets/images/forclients.jpg') center/cover no-repeat;
+    background-color: #000; /* Fallback background color */
 }
 
 .hero::before {
@@ -141,10 +142,10 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Make the logo full width */
+    height: 100%; /* Adjust height to fill the hero section */
     background-image: url('https://i.imgur.com/ORDJyTe.png'); /* Ensure this URL is correct */
-    background-size: contain; /* Adjust to fit the logo properly */
+    background-size: cover; /* Ensure the image fills the area */
     background-repeat: no-repeat;
     background-position: center;
     opacity: 1; /* Ensure full visibility */
@@ -163,9 +164,9 @@ body {
     display: flex;
     gap: 1.5rem; /* Space between the buttons */
     position: absolute; /* Position relative to the `.hero` container */
-    bottom: 60px; /* Distance from the bottom of the `.hero` container */
-    left: 20px; /* Distance from the left of the `.hero` container */
-    margin: 0; /* Ensure no extra margin */
+    bottom: 100px; /* Adjust the value to move buttons up */
+    left: 40px; /* Adjust the value to align with the logo */
+    margin: 0; /* Remove extra margins */
     z-index: 2; /* Ensure it appears above the background */
 }
 
