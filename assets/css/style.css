@@ -119,7 +119,7 @@ body {
 .hero {
     position: relative;
     height: 600px; /* Adjust height as needed */
-    width: 100vw; /* Ensure it fills the viewport width */
+    width: 120vw; /* Ensure it fills the viewport width */
     display: flex;
     align-items: flex-start; /* Adjust alignment */
     justify-content: flex-start; /* Adjust content horizontally */
@@ -165,7 +165,7 @@ body {
     gap: 1.5rem; /* Space between the buttons */
     position: absolute; /* Position relative to the `.hero` container */
     bottom: 100px; /* Adjust the value to move buttons up */
-    left: 40px; /* Adjust the value to align with the logo */
+    left: 60px; /* Adjust the value to align with the logo */
     margin: 0; /* Remove extra margins */
     z-index: 2; /* Ensure it appears above the background */
 }
