@@ -120,8 +120,8 @@ body {
     position: relative;
     height: 600px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start; /* Align content to the top by default */
+    justify-content: center; /* Center the content horizontally */
     text-align: center;
     color: var(--white);
     background: url('/assets/images/forclients.jpg') center/cover no-repeat;
