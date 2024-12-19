@@ -118,7 +118,7 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 600px; /* Adjust height as needed */
+    height: 650px; /* Adjust height as needed */
     width: 100vw; /* Ensure it fills the viewport width */
     display: flex;
     align-items: flex-start; /* Adjust alignment */
