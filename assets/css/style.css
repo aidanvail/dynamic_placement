@@ -142,7 +142,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 110%; /* Make the logo full width */
+    width: 100%; /* Make the logo full width */
     height: 100%; /* Adjust height to fill the hero section */
     background-image: url('https://i.imgur.com/ORDJyTe.png'); /* Ensure this URL is correct */
     background-size: cover; /* Ensure the image fills the area */
