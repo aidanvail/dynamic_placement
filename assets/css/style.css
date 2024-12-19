@@ -118,13 +118,23 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    width: 100%;
     height: 600px;
-    overflow: hidden;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    background-color: var(--primary-color);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    background: url('/assets/images/forclients.jpg') center/cover no-repeat;
+}
+
+.hero::before {
+    display: none;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem;
 }
 
 .hero-logo {
@@ -137,22 +147,6 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0.9;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(11, 36, 71, 0.4) 0%,
-        rgba(11, 36, 71, 0.6) 70%,
-        rgba(11, 36, 71, 0.8) 100%
-    );
-    z-index: 1;
 }
 
 .hero-content {
