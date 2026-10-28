@@ -1,0 +1,13 @@
+services:
+  application-mailer:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    expose:
+      - "3000"
+    # Expose through the existing HTTPS reverse proxy, not directly to the internet.
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true

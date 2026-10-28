@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Apply for a Job | Placement Dynamics</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #152b37; background: #f3f6f8; }
+    * { box-sizing: border-box; } body { margin: 0; padding: 24px 14px; }
+    main { background: white; max-width: 620px; margin: 0 auto; padding: 28px; border-radius: 14px; box-shadow: 0 6px 26px #14212c13; }
+    h1 { margin: 0 0 8px; font-size: 1.75rem; }
+    p { line-height: 1.55; } .muted { color: #4c5d66; font-size: .92rem; }
+    label { display: block; font-weight: 600; margin: 16px 0 5px; }
+    input, textarea { width: 100%; padding: 12px; border: 1px solid #8397a1; border-radius: 6px; font: inherit; }
+    textarea { min-height: 96px; }
+    .check { display:flex; gap: 10px; align-items: flex-start; margin: 18px 0; }
+    .check input { flex: 0 0 18px; margin-top: 4px; } .check label { margin: 0; font-weight: 400; }
+    button { background: #173b52; color:white; padding: 13px 20px; border:0; border-radius: 7px; cursor:pointer; font: inherit; font-weight: 700; }
+    button:disabled { opacity:.65; cursor:wait; }
+    .hidden { position: absolute; left: -10000px; }
+    #status { min-height: 24px; font-weight: 600; }
+    #status.error { color: #a52626; } #status.success { color:#14613e; }
+    a { color: #155b83; } .security { margin: 18px 0; min-height: 64px; }
+    @media(max-width:480px){ main {padding: 19px;} }
+  </style>
+  <script src="/app.js" defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Apply for a Job</h1>
+    <p>Placement Dynamics: Submit your CV and a head-and-shoulders photo directly to our recruitment team. You won't need to open an email application.</p>
+    <form id="application" enctype="multipart/form-data" method="post" action="/api/apply">
+      <label for="job">Job title or reference *</label>
+      <input id="job" name="job" maxlength="150" required autocomplete="off">
+      <label for="name">Full name *</label>
+      <input id="name" name="name" maxlength="120" required autocomplete="name">
+      <label for="email">Email address *</label>
+      <input id="email" name="email" type="email" maxlength="254" required autocomplete="email">
+      <label for="phone">Contact number</label>
+      <input id="phone" name="phone" type="tel" maxlength="40" autocomplete="tel">
+      <label for="cv">CV (PDF or Word, max 6 MB) *</label>
+      <input id="cv" name="cv" type="file" accept=".pdf,.docx,.doc" required>
+      <label for="photo">Head-and-shoulders photo (JPG or PNG, max 6 MB) *</label>
+      <input id="photo" name="photo" type="file" accept=".jpg,.jpeg,.png" required>
+      <label for="message">Additional information</label>
+      <textarea id="message" name="message" maxlength="1500" placeholder="Optional"></textarea>
+      <div class="hidden" aria-hidden="true"><label for="website">Leave this blank</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="check">
+        <input id="consent" name="consent" type="checkbox" value="yes" required>
+        <label for="consent">I consent to Placement Dynamics processing my application and contacting me regarding recruitment. I have read the <a href="https://www.placedynamics.co.za/" target="_blank" rel="noopener">website privacy information</a>. *</label>
+      </div>
+      <div class="security" id="turnstile"></div>
+      <button id="submit" type="submit">Send application</button>
+      <p role="status" id="status" aria-live="polite"></p>
+      <p class="muted">Files are emailed to Placement Dynamics and are not added to Airtable or a CV database by this service. Email systems may retain copies under the recruiter's retention policy.</p>
+    </form>
+    <p class="muted">Having difficulties? Contact <a href="mailto:cv@placedynamics.co.za">cv@placedynamics.co.za</a>.</p>
+  </main>
+</body>
+</html>
