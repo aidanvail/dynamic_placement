@@ -52,7 +52,7 @@ app.get('/api/config', (_, res) => res.json({ siteKey: process.env.TURNSTILE_SIT
 
 const upload = multer({
   storage: multer.memoryStorage(), // Never save uploaded CVs or photos on disk.
-  limits: { files: 2, fields: 7, parts: 10, fileSize: 6 * 1024 * 1024, fieldSize: 2048 }
+  limits: { files: 2, fields: 8, parts: 10, fileSize: 6 * 1024 * 1024, fieldSize: 2048 }
 }).fields([{ name: 'cv', maxCount: 1 }, { name: 'photo', maxCount: 1 }]);
 
 const limiter = rateLimit({
